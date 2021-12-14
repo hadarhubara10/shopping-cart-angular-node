@@ -1,0 +1,72 @@
+<h1 mat-dialog-title>Checkout</h1>
+<form [formGroup]="form" action="">
+  <div mat-dialog-content>
+    <div class="modal-body">
+      <div class="card-checkout">
+        <div class="heading">
+          <h3>
+            payment details
+            <!-- {{}} -->
+          </h3>
+        </div>
+        <div class="content">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Enter Your Name: *</mat-label>
+            <input
+              type="text"
+              matInput
+              formControlName="name"
+              placeholder="name"
+            />
+            <mat-error *ngIf="form.controls.name.invalid">
+              name is <b>required</b>
+            </mat-error>
+          </mat-form-field>
+          <br />
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Enter Your Phone Number: </mat-label>
+            <input
+              required
+              type="text"
+              matInput
+              formControlName="phoneNumber"
+            />
+            <mat-error *ngIf="form.controls.phoneNumber.errors?.pattern">
+              phoneNumber is <b>Erroneous</b>
+            </mat-error>
+            <mat-error *ngIf="form.controls.phoneNumber.errors?.required">
+              phoneNumber is <b>Required</b>
+            </mat-error>
+          </mat-form-field>
+          <br />
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input
+              type="email"
+              required
+              matInput
+              formControlName="email"
+              placeholder="Ex. pat@example.com"
+            />
+            <mat-error *ngIf="form.controls.email.invalid">
+              Please enter a valid email address
+            </mat-error>
+          </mat-form-field>
+          <app-login-google></app-login-google>
+          <div mat-dialog-actions>
+            <br />
+            <button class="btn btn-primary" mat-button (click)="createUser()">
+              BUY
+            </button>
+            <br />
+            <button class="btn btn-info" mat-button mat-dialog-close>
+              Back
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- {{ form.controls.phoneNumber | json }} -->

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="google-signin-client_id"
+      content="664914268503-ggq07gi47md2uje3pp824f7vubrfcf5q.apps.googleusercontent.com"
+    />
+
+    <title>ShoppingCart</title>
+    <base href="/" />
+    <!-- Google - login -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/jquery.min.js"></script>
+    <!-- fab icon -->
+    <script
+      src="https://kit.fontawesome.com/a32e03e8c9.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- bootstrap css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="mat-typography">
+    <app-root></app-root>
+
+    <!-- Login Google -->
+
+    <!-- <div style="margin-left: 45%; margin-top: 100px">
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+      <a href="#" onclick="signOut()">Sign out</a>
+      <script>
+        function onSignIn(googleUser) {
+          console.log("test");
+
+          var profile = googleUser.getBasicProfile();
+          console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
+          console.log("Name: " + profile.getName());
+          console.log("Image URL: " + profile.getImageUrl());
+          console.log("Email: " + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
+
+        function signOut() {
+          var auth2 = gapi.auth2.getAuthInstance();
+          // console.log(auth2.isSignedIn.getName());
+          console.log(gapi.auth2.GoogleUser());
+          // var profile = auth2.getBasicProfile();
+          // console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
+          // console.log("Name: " + profile.getName());
+          // console.log("Image URL: " + profile.getImageUrl());
+          // console.log("Email: " + profile.getEmail()); // This is null if the 'email' scope is not present.
+          auth2.signOut().then(function () {
+            console.log("User signed out.");
+          });
+        }
+      </script> -->
+      
+      <!-- Login Google End! -->
+    </div>
+  </body>
+  <!-- scrollBar -->
+  <style>
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  </style>
+</html>

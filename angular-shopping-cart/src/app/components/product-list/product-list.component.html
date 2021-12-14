@@ -1,0 +1,42 @@
+<app-cart-side-nav
+  (onDeleteClick)="deleteProductOnCart($event)"
+  (onDeleteCartClick)="deleteAllCart()"
+  [cartArray]="cartArray"
+  [resultTotal]="resultTotal"
+  [cartLength]="cartLength"
+></app-cart-side-nav>
+<div class="container-title">
+  <div class="title">
+    <h1>{{ category }}</h1>
+  </div>
+  <button mat-stroked-button color="primary">Phone</button>
+  <button mat-stroked-button color="primary">TV</button>
+  <button mat-stroked-button color="primary">Laptop</button>
+</div>
+<div class="container">
+  <!-- row and col -->
+  <div class="row row-cols-4">
+    <div *ngFor="let prod of categoryArray" class="col">
+      <!-- material card -->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>
+            {{ prod.productName | slice: 0:10 }}
+          </mat-card-title>
+          <mat-card-subtitle>
+            <h2>{{ prod.price }}₪</h2>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://picsum.photos/200/100" alt="" />
+        <!-- {{ prod.img }} -->
+        <mat-card-actions>
+          <button (click)="addToCart(prod)" mat-button>BUY</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!-- end material card -->
+    </div>
+  </div>
+</div>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

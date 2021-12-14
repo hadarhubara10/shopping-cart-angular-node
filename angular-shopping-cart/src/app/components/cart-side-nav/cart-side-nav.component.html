@@ -1,0 +1,59 @@
+<!-- side bar -->
+<div class="sidenav">
+  <div class="containerNav">
+    <div class="shopping-cart-nav">
+      <button
+        class="btn viewAll btn-outline-primary"
+        (click)="changeShowCart()"
+      >
+        <span class="HideShowCart" *ngIf="showCart">Hide Cart</span>
+        <span class="HideShowCart" *ngIf="!showCart">Show Cart</span>
+        <i style="color: black" class="fas fa-shopping-cart"></i>
+      </button>
+      <div class="shopping-cart-header">
+        <i class="fa fa-shopping-cart cart-icon"></i
+        ><span id="idBadge" class="badge">{{ cartLength }}</span>
+        <div class="shopping-cart-total">
+          <span class="lighter-text">Total:</span>
+          <span id="idTotalCart" class="main-color-text"
+            >{{ resultTotal.toLocaleString() }}₪</span
+          >
+        </div>
+      </div>
+      <!-- end shopping-cart-header -->
+      <div *ngIf="showCart">
+        <ul
+          *ngFor="let product of cartArray"
+          id="idUlSideBar"
+          class="shopping-cart-items"
+        >
+          <li class="clearfix">
+            <img src="{{ product.img }}" alt="item1" />
+            <span class="item-name">{{ product.productName }}</span>
+            <span class="item-price">{{ product.price }}₪</span>
+            <span class="item-quantity">Quantity: {{ product.quantity }}</span>
+            <img
+              (click)="DeleteClick(product.productID)"
+              style="width: 19px; float: right; margin-top: -13px"
+              src="../../../assets/x-button.png"
+            />
+          </li>
+        </ul>
+      </div>
+
+      <div *ngIf="showCart">
+        <button
+          (click)="DeleteCartClick()"
+          id="deleteAll"
+          class="btn btn-danger"
+        >
+          Delete all cart
+        </button>
+
+        <a (click)="openDialog()" class="button-nav">Checkout</a>
+      </div>
+    </div>
+    <!-- end shopping-cart -->
+  </div>
+  <!-- end container -->
+</div>
